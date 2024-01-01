@@ -1,11 +1,46 @@
 extends Node
 
+var upgrades = 0
+var limitBreak = false
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
+# upgrades
+var health = 0
+var regen = 0
+var curse = 0
+var amount = 0
+var speed = 0
+var greed = 0
+var projectileTimeout = 0
+var projectileSpeed = 0
 
+# change meta
+func changeUpgrades(num):
+	upgrades = num
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func changelimitBreak(boo):
+	limitBreak= boo
+
+# change upgrades
+func changeHealth(num):
+	health = num
+
+func changeRegen(num):
+	regen = num
+
+func changeCurse(num):
+	curse = num
+
+func changeAmount(num):
+	amount = num
+
+func changeSpeed(num):
+	speed = num
+
+func changeGreed(num):
+	greed = num
+
+func changeProjectileSpeed(num):
+	projectileSpeed = num
+
+func changeProjectileTimeout(num):
+	projectileTimeout = num

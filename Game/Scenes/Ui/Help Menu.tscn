@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://p3r4iumcmwol"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/Help Menu.gd" id="1_50en6"]
+
+[node name="Help menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_50en6")
+
+[node name="Help" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 896.0
+theme_override_colors/font_color = Color(1, 0.576471, 0.517647, 1)
+theme_override_font_sizes/font_size = 43
+text = "Click play to start the run
+
+Kill enemies to get gold
+
+Use gold to upgrade character and purchase weapons
+
+Boss raid after every couple of emenies kill boss to get bonus gold
+ 
+Use cheat menu to cheat in gold if stuck
+
+Reset save file using dedicated button, you must relaunch the game after doing so"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 0
+offset_top = 896.0
+offset_right = 1920.0
+offset_bottom = 1024.0
+theme_override_colors/font_color = Color(0.501961, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "Back to main menu"
+
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]

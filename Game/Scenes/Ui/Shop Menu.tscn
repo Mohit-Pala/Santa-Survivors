@@ -26,6 +26,8 @@ offset_left = 256.0
 offset_top = 256.0
 offset_right = 640.0
 offset_bottom = 384.0
+text = "Snowball
+$10,000"
 
 [node name="Presents" type="Button" parent="."]
 layout_mode = 0
@@ -33,6 +35,8 @@ offset_left = 1280.0
 offset_top = 256.0
 offset_right = 1664.0
 offset_bottom = 384.0
+text = "Presents
+$30,000"
 
 [node name="Star" type="Button" parent="."]
 layout_mode = 0
@@ -40,6 +44,8 @@ offset_left = 256.0
 offset_top = 512.0
 offset_right = 640.0
 offset_bottom = 640.0
+text = "Star
+$50,000"
 
 [node name="Snow shield" type="Button" parent="."]
 layout_mode = 0
@@ -47,6 +53,8 @@ offset_left = 768.0
 offset_top = 512.0
 offset_right = 1152.0
 offset_bottom = 640.0
+text = "Snow shield
+$100,000"
 
 [node name="Healing tree" type="Button" parent="."]
 layout_mode = 0
@@ -54,6 +62,8 @@ offset_left = 1280.0
 offset_top = 512.0
 offset_right = 1664.0
 offset_bottom = 640.0
+text = "Healing tree
+$80,000"
 
 [node name="Back to main menu" type="Button" parent="."]
 layout_mode = 0

@@ -19,3 +19,7 @@ func _on_reset_pressed():
 
 func _on_upgrade_pressed():
 	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Upgrades.tscn")
+
+
+func _on_shop_pressed():
+	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Shop Menu.tscn")

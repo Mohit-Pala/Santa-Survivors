@@ -1,0 +1,124 @@
+[gd_scene load_steps=2 format=3 uid="uid://bimsms1uealb6"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/Upgrades.gd" id="1_qf36v"]
+
+[node name="Upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qf36v")
+
+[node name="Gold label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 896.0
+offset_bottom = 256.0
+text = "Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrades label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 128.0
+offset_right = 1280.0
+offset_bottom = 256.0
+text = "Upgrades: 
+Limit Break: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 512.0
+offset_bottom = 256.0
+
+[node name="Regen" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 128.0
+offset_right = 1664.0
+offset_bottom = 256.0
+
+[node name="Curse" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 384.0
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Amount" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 896.0
+offset_bottom = 512.0
+
+[node name="Speed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 512.0
+
+[node name="Greed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 384.0
+offset_right = 1664.0
+offset_bottom = 512.0
+
+[node name="Projectile speed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 640.0
+offset_right = 512.0
+offset_bottom = 768.0
+
+[node name="Projectile timeout" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 640.0
+offset_right = 896.0
+offset_bottom = 768.0
+
+[node name="Limit break" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 640.0
+offset_right = 1664.0
+offset_bottom = 768.0
+
+[node name="Back to main menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 896.0
+offset_right = 768.0
+offset_bottom = 1024.0
+text = "<- Back to main menu"
+
+[node name="To weapon shop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 896.0
+offset_right = 1792.0
+offset_bottom = 1024.0
+text = "To weapon shop ->"
+
+[connection signal="pressed" from="Health" to="." method="_on_health_pressed"]
+[connection signal="pressed" from="Regen" to="." method="_on_regen_pressed"]
+[connection signal="pressed" from="Curse" to="." method="_on_curse_pressed"]
+[connection signal="pressed" from="Amount" to="." method="_on_amount_pressed"]
+[connection signal="pressed" from="Speed" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="Greed" to="." method="_on_greed_pressed"]
+[connection signal="pressed" from="Projectile speed" to="." method="_on_projectile_speed_pressed"]
+[connection signal="pressed" from="Projectile timeout" to="." method="_on_projectile_timeout_pressed"]
+[connection signal="pressed" from="Limit break" to="." method="_on_limit_break_pressed"]
+[connection signal="pressed" from="Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="To weapon shop" to="." method="_on_to_weapon_shop_pressed"]

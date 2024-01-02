@@ -22,3 +22,18 @@ func unlockSnowShield():
 
 func unlockHealingTree():
 	healingTree = true
+	
+func changeSnowball(val):
+	snowball = val
+
+func changePresents(val):
+	presents = val
+
+func changeStar(val):
+	star = val
+
+func changeSnowShield(val):
+	snowShield = val
+
+func changeHealingTree(val):
+	healingTree = val

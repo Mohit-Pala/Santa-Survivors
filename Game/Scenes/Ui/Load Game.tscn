@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=3 uid="uid://r8s5uog0h2y6"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/Load Game.gd" id="1_stt34"]
+
+[node name="Load Game" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_stt34")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 384.0
+theme_override_font_sizes/font_size = 100
+text = "SANTA SURVIVORS"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Loading" type="Label" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 384.0
+offset_right = 1664.0
+offset_bottom = 512.0
+text = "Loading Game"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[node name="Load Bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 640.0
+offset_right = 1664.0
+offset_bottom = 896.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Load Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Load Timer" to="." method="_on_load_timer_timeout"]

@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://2xpu4twylxfj"]
+[gd_scene load_steps=2 format=3 uid="uid://2xpu4twylxfj"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/Shop Menu.gd" id="1_fbbya"]
 
 [node name="Shop Menu" type="Control"]
 layout_mode = 3
@@ -7,3 +9,72 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_fbbya")
+
+[node name="Gold label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 256.0
+offset_right = 1152.0
+offset_bottom = 384.0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Snowball" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 640.0
+offset_bottom = 384.0
+
+[node name="Presents" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 256.0
+offset_right = 1664.0
+offset_bottom = 384.0
+
+[node name="Star" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 512.0
+offset_right = 640.0
+offset_bottom = 640.0
+
+[node name="Snow shield" type="Button" parent="."]
+layout_mode = 0
+offset_left = 768.0
+offset_top = 512.0
+offset_right = 1152.0
+offset_bottom = 640.0
+
+[node name="Healing tree" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1280.0
+offset_top = 512.0
+offset_right = 1664.0
+offset_bottom = 640.0
+
+[node name="Back to main menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 768.0
+offset_right = 768.0
+offset_bottom = 896.0
+text = "Back to main menu"
+
+[node name="To upgrade menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 768.0
+offset_right = 1664.0
+offset_bottom = 896.0
+text = "To upgrade shop"
+
+[connection signal="pressed" from="Snowball" to="." method="_on_snowball_pressed"]
+[connection signal="pressed" from="Presents" to="." method="_on_presents_pressed"]
+[connection signal="pressed" from="Star" to="." method="_on_star_pressed"]
+[connection signal="pressed" from="Snow shield" to="." method="_on_snow_shield_pressed"]
+[connection signal="pressed" from="Healing tree" to="." method="_on_healing_tree_pressed"]
+[connection signal="pressed" from="Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="To upgrade menu" to="." method="_on_to_upgrade_menu_pressed"]

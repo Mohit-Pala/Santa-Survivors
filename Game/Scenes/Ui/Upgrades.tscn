@@ -110,3 +110,15 @@ offset_top = 896.0
 offset_right = 1792.0
 offset_bottom = 1024.0
 text = "To weapon shop ->"
+
+[connection signal="pressed" from="Health" to="." method="_on_health_pressed"]
+[connection signal="pressed" from="Regen" to="." method="_on_regen_pressed"]
+[connection signal="pressed" from="Curse" to="." method="_on_curse_pressed"]
+[connection signal="pressed" from="Amount" to="." method="_on_amount_pressed"]
+[connection signal="pressed" from="Speed" to="." method="_on_speed_pressed"]
+[connection signal="pressed" from="Greed" to="." method="_on_greed_pressed"]
+[connection signal="pressed" from="Projectile speed" to="." method="_on_projectile_speed_pressed"]
+[connection signal="pressed" from="Projectile timeout" to="." method="_on_projectile_timeout_pressed"]
+[connection signal="pressed" from="Limit break" to="." method="_on_limit_break_pressed"]
+[connection signal="pressed" from="Back to main menu" to="." method="_on_back_to_main_menu_pressed"]
+[connection signal="pressed" from="To weapon shop" to="." method="_on_to_weapon_shop_pressed"]

@@ -8,7 +8,7 @@ func _ready():
 	$"Saving Bar".max_value = saveCountdown
 	$"Exit Game".start(saveCountdown)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	$"Saving Bar".set_value($"Exit Game".get_time_left())
 	pass
 	

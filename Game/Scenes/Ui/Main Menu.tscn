@@ -98,3 +98,7 @@ text = "Exit only using the exit button. Exitting any other way is not supported
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="Cheat" to="." method="_on_cheat_pressed"]
+[connection signal="pressed" from="Help" to="." method="_on_help_pressed"]

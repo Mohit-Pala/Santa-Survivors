@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjpq8j4nmfk1h"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/Reset Save File.gd" id="1_jj573"]
+
+[node name="Reset Save File" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_jj573")
+
+[node name="Exit Game" type="Timer" parent="."]
+wait_time = 0.5
+
+[node name="Saving Bar" type="ProgressBar" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 640.0
+offset_right = 1664.0
+offset_bottom = 896.0
+fill_mode = 1
+show_percentage = false
+
+[node name="Saving Game" type="Label" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 256.0
+offset_right = 1664.0
+offset_bottom = 512.0
+text = "RESETTING SAVE FILE
+
+DONT EXIT"
+horizontal_alignment = 1
+vertical_alignment = 1
+justification_flags = 162
+
+[connection signal="timeout" from="Exit Game" to="." method="_on_exit_game_timeout"]

@@ -102,3 +102,4 @@ autowrap_mode = 3
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Cheat" to="." method="_on_cheat_pressed"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]
+[connection signal="pressed" from="Reset" to="." method="_on_reset_pressed"]

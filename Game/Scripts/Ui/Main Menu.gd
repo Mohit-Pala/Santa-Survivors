@@ -12,3 +12,6 @@ func _on_cheat_pressed():
 
 func _on_help_pressed():
 	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Help Menu.tscn")
+
+func _on_reset_pressed():
+	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Reset Save File.tscn")

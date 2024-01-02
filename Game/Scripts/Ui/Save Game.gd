@@ -18,8 +18,11 @@ func saveGame():
 	# gold
 	config.set_value("santa", "gold", Gold.gold)
 	
-	# upgrades
+	# meta upgrades
 	config.set_value("santa", "upgrades", Upgrades.upgrades)
+	config.set_value("santa", "limitBreak", Upgrades.limitBreak)
+
+	# upgrades
 	config.set_value("santa", "healthUpgrade", Upgrades.health)
 	config.set_value("santa", "regenUpgrade", Upgrades.regen)
 	config.set_value("santa", "curse", Upgrades.curse)
@@ -28,7 +31,6 @@ func saveGame():
 	config.set_value("santa", "greed", Upgrades.greed)
 	config.set_value("santa", "projSpeed", Upgrades.projectileSpeed)
 	config.set_value("santa", "projTimeout", Upgrades.projectileTimeout)
-	config.set_value("santa", "limitBreak", Upgrades.limitBreak)
 	
 	# weapons
 	config.set_value("santa", "snowball", Shop.snowball)

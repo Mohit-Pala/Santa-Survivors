@@ -52,7 +52,7 @@ func _on_limit_break_pressed():
 
 
 func _on_back_to_main_menu_pressed():
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Main Menu.tscn")
 
 
 func _on_to_weapon_shop_pressed():

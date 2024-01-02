@@ -15,3 +15,7 @@ func _on_help_pressed():
 
 func _on_reset_pressed():
 	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Reset Save File.tscn")
+
+
+func _on_upgrade_pressed():
+	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Upgrades.tscn")

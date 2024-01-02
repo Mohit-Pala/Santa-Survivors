@@ -32,17 +32,17 @@ text = "Play"
 
 [node name="Shop" type="Button" parent="."]
 layout_mode = 0
-offset_left = 704.0
+offset_left = 1024.0
 offset_top = 640.0
-offset_right = 960.0
+offset_right = 1280.0
 offset_bottom = 768.0
 text = "Shop"
 
 [node name="Upgrade" type="Button" parent="."]
 layout_mode = 0
-offset_left = 1024.0
+offset_left = 704.0
 offset_top = 640.0
-offset_right = 1280.0
+offset_right = 960.0
 offset_bottom = 768.0
 text = "Upgrades"
 
@@ -99,6 +99,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
 
+[connection signal="pressed" from="Upgrade" to="." method="_on_upgrade_pressed"]
 [connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="Cheat" to="." method="_on_cheat_pressed"]
 [connection signal="pressed" from="Help" to="." method="_on_help_pressed"]

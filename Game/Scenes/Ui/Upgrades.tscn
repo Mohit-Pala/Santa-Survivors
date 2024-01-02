@@ -1,0 +1,112 @@
+[gd_scene load_steps=2 format=3 uid="uid://bimsms1uealb6"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/Upgrades.gd" id="1_qf36v"]
+
+[node name="Upgrades" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_qf36v")
+
+[node name="Gold label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 128.0
+offset_right = 896.0
+offset_bottom = 256.0
+text = "Gold"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Upgrades label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 128.0
+offset_right = 1280.0
+offset_bottom = 256.0
+text = "Upgrades: 
+Limit Break: "
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Health" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 128.0
+offset_right = 512.0
+offset_bottom = 256.0
+
+[node name="Regen" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 128.0
+offset_right = 1664.0
+offset_bottom = 256.0
+
+[node name="Curse" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 384.0
+offset_right = 512.0
+offset_bottom = 512.0
+
+[node name="Amount" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 384.0
+offset_right = 896.0
+offset_bottom = 512.0
+
+[node name="Speed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 384.0
+offset_right = 1280.0
+offset_bottom = 512.0
+
+[node name="Greed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1408.0
+offset_top = 384.0
+offset_right = 1664.0
+offset_bottom = 512.0
+
+[node name="Projectile speed" type="Button" parent="."]
+layout_mode = 0
+offset_left = 256.0
+offset_top = 640.0
+offset_right = 512.0
+offset_bottom = 768.0
+
+[node name="Projectile timeout" type="Button" parent="."]
+layout_mode = 0
+offset_left = 640.0
+offset_top = 640.0
+offset_right = 896.0
+offset_bottom = 768.0
+
+[node name="Limit break" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1024.0
+offset_top = 640.0
+offset_right = 1664.0
+offset_bottom = 768.0
+
+[node name="Back to main menu" type="Button" parent="."]
+layout_mode = 0
+offset_left = 128.0
+offset_top = 896.0
+offset_right = 768.0
+offset_bottom = 1024.0
+text = "<- Back to main menu"
+
+[node name="To weapon shop" type="Button" parent="."]
+layout_mode = 0
+offset_left = 1152.0
+offset_top = 896.0
+offset_right = 1792.0
+offset_bottom = 1024.0
+text = "To weapon shop ->"

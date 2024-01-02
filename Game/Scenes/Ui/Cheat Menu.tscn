@@ -76,3 +76,11 @@ offset_top = 896.0
 offset_right = 1152.0
 offset_bottom = 1024.0
 text = "Exit"
+
+[connection signal="pressed" from="Hundred" to="." method="_on_hundred_pressed"]
+[connection signal="pressed" from="Five Hundred" to="." method="_on_five_hundred_pressed"]
+[connection signal="pressed" from="Thousand" to="." method="_on_thousand_pressed"]
+[connection signal="pressed" from="Ten Thousand" to="." method="_on_ten_thousand_pressed"]
+[connection signal="pressed" from="Fifty Thousand" to="." method="_on_fifty_thousand_pressed"]
+[connection signal="pressed" from="Hundred Thousand" to="." method="_on_hundred_thousand_pressed"]
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

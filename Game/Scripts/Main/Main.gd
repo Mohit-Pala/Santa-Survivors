@@ -3,13 +3,14 @@ extends Node2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	$Health.max_value = Run.charHealth
 	$Enemy.start(1)
 	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	pass
+	$Health.value = Run.charHealth
 
 
 func _on_flee_pressed():

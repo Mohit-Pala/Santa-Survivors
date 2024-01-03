@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://0856k6ruqmnl"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Enemies/Snowman.gd" id="1_jf0mg"]
+[ext_resource type="Texture2D" uid="uid://cixoynfkcout6" path="res://Assets/Ememies/SnowmanFrame1.png" id="1_lvm8y"]
+[ext_resource type="Texture2D" uid="uid://ksl4y224i4lf" path="res://Assets/Ememies/SnowmanFrame2.png" id="2_1ynpq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_g038x"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_lvm8y")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_1ynpq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5vycm"]
+size = Vector2(32, 56)
+
+[node name="Snowman" type="Area2D"]
+script = ExtResource("1_jf0mg")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(128, 0)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_g038x")
+frame_progress = 0.244552
+offset = Vector2(-64, -1.90735e-06)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -4)
+shape = SubResource("RectangleShape2D_5vycm")

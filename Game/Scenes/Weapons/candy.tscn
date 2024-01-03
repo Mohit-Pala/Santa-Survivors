@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://b26xwiex6k6w"]
+[gd_scene load_steps=9 format=3 uid="uid://b26xwiex6k6w"]
 
+[ext_resource type="Script" path="res://Game/Scripts/Weapons/candy.gd" id="1_fsb6g"]
 [ext_resource type="Texture2D" uid="uid://bqsa40uga3ab8" path="res://Assets/Weapons/CandyFrame1.png" id="1_vjwca"]
 [ext_resource type="Texture2D" uid="uid://clvr372tt55n8" path="res://Assets/Weapons/CandyFrame2.png" id="2_kat7y"]
 [ext_resource type="Texture2D" uid="uid://cur30wleu0tk3" path="res://Assets/Weapons/CandyFrame3.png" id="3_taihv"]
@@ -32,14 +33,17 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udeu1"]
 size = Vector2(22, 9)
 
-[node name="Candy" type="Area2D"]
+[node name="Candy" type="CharacterBody2D" groups=["Weapon"]]
+script = ExtResource("1_fsb6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_3mfec")
-frame_progress = 0.18664
+frame_progress = 0.0172035
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -2.5)
 shape = SubResource("RectangleShape2D_udeu1")
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Delete self" type="Timer" parent="."]
+
+[connection signal="timeout" from="Delete self" to="." method="_on_delete_self_timeout"]

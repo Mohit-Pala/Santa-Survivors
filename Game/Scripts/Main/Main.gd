@@ -9,6 +9,7 @@ func _ready():
 	# start timers on run start
 	$Regen.start(regenTimer)
 	$Enemy.start(1)
+	$Candy.start(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,7 +23,10 @@ func _on_flee_pressed():
 
 
 func _on_candy_timeout():
-	pass
+	var candy = load("res://Game/Scenes/Weapons/candy.tscn").instantiate()
+	candy.position = $Santa.position
+	add_child(candy)
+	print("Spawned candy")
 
 
 func _on_enemy_timeout():
@@ -40,8 +44,9 @@ func _on_enemy_timeout():
 		enemy.position.x = randi_range(0 , screenSize.x)
 		enemy.position.y = randi_range(0 ,screenSize.y)
 		add_child(enemy)
+		print("Spawned Enemy")
 
 
 func _on_regen_timeout():
-	print(regenTimer)
+	print("Gained 1 hp")
 	Run.charHealth += 1

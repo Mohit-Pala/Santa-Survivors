@@ -117,7 +117,7 @@ func _on_amount_pressed():
 			Upgrades.changeAmount(Upgrades.amount + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.curse >= 50):
+			if(Upgrades.amount >= 50):
 				pass
 			else:
 				Gold.reduceGold(amountAmt)
@@ -135,7 +135,7 @@ func _on_speed_pressed():
 			Upgrades.changeSpeed(Upgrades.speed + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.curse >= 50):
+			if(Upgrades.speed >= 30):
 				pass
 			else:
 				Gold.reduceGold(speedAmt)
@@ -153,7 +153,7 @@ func _on_greed_pressed():
 			Upgrades.changeGreed(Upgrades.greed + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.curse >= 50):
+			if(Upgrades.greed >= 50):
 				pass
 			else:
 				Gold.reduceGold(greedAmt)
@@ -171,7 +171,7 @@ func _on_projectile_speed_pressed():
 			Upgrades.changeProjectileSpeed(Upgrades.projectileSpeed + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.curse >= 50):
+			if(Upgrades.projectileSpeed >= 50):
 				pass
 			else:
 				Gold.reduceGold(projSpeedAmt)
@@ -189,7 +189,7 @@ func _on_projectile_timeout_pressed():
 			Upgrades.changeProjectileTimeout(Upgrades.projectileTimeout + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.curse >= 50):
+			if(Upgrades.projectileTimeout >= 50):
 				pass
 			else:
 				Gold.reduceGold(projTimeAmt)

@@ -28,9 +28,11 @@ script = ExtResource("1_jf0mg")
 position = Vector2(128, 0)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_g038x")
-frame_progress = 0.244552
+frame_progress = 0.730503
 offset = Vector2(-64, -1.90735e-06)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -4)
 shape = SubResource("RectangleShape2D_5vycm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

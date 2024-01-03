@@ -1,8 +1,5 @@
 extends Area2D
 
-func _ready():
-	$AnimatedSprite2D.play()
-	
 func _physics_process(delta):
 	position.x = move_toward(self.position.x, Run.charPosx, delta * (30 + (Upgrades.curse * 2)))
 	position.y = move_toward(self.position.y, Run.charPosy, delta * (30 + (Upgrades.curse * 2)))

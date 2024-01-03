@@ -29,7 +29,7 @@ position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_rwqj1")
 animation = &"Santa Walk"
-frame_progress = 0.263035
+frame_progress = 0.244976
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 0)

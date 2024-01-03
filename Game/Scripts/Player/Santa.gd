@@ -19,8 +19,7 @@ func get_input(delta):
 func _physics_process(delta):
 	if(Run.charHealth <= 0):
 		Gold.changeGold(Gold.gold + Run.enemiesKilled * 100)
-		Run.enemiesKilled = 0
-		Run.charHealth = 0
+		Run.reset()
 		get_tree().change_scene_to_file("res://Game/Scenes/Ui/Main Menu.tscn")
 	# 8 way input
 	get_input(delta)

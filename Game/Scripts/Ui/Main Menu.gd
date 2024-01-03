@@ -2,6 +2,7 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	Run.reset()
 	$"Gold label".text = "Gold:\n" + str(Gold.gold)
 
 func _on_exit_pressed():

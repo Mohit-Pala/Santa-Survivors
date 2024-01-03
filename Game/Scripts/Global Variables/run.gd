@@ -1,7 +1,7 @@
 extends Node
 
 # main stats
-var charHealth = 10
+var charHealth = 0
 var enemiesKilled = 0
 
 # char pos
@@ -22,3 +22,7 @@ func killed():
 func changeCharPos(x, y):
 	charPosx = x
 	charPosy = y
+
+func reset():
+	enemiesKilled = 0
+	charHealth = 10 + Upgrades.health

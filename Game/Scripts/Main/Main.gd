@@ -1,16 +1,20 @@
 extends Node2D
 
-
+var regenTimer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	regenTimer = 10 * sin(4.5 / (Upgrades.regen + 3))
 	$Health.max_value = Run.charHealth
+	
+	# start timers on run start
+	$Regen.start(regenTimer)
 	$Enemy.start(1)
-	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
 	$Health.value = Run.charHealth
+	$Kills.text = "Kills: " + str(Run.enemiesKilled)
 
 
 func _on_flee_pressed():
@@ -36,3 +40,8 @@ func _on_enemy_timeout():
 		enemy.position.x = randi_range(0 , screenSize.x)
 		enemy.position.y = randi_range(0 ,screenSize.y)
 		add_child(enemy)
+
+
+func _on_regen_timeout():
+	print(regenTimer)
+	Run.charHealth += 1

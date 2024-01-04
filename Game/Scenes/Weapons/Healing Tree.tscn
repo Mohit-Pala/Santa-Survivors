@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://b54tv40lldjck"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Weapons/Healing Tree.gd" id="1_er8n0"]
+[ext_resource type="Texture2D" uid="uid://ckcnckig6b5dm" path="res://Assets/Weapons/Healing tree border.png" id="1_u3lkt"]
+[ext_resource type="Texture2D" uid="uid://ekhwrcikpljh" path="res://Assets/Weapons/HealingTree.png" id="1_wfhhg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0klcx"]
+radius = 96.0
+
+[node name="Healing Tree" type="Area2D"]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_er8n0")
+metadata/_edit_group_ = true
+
+[node name="Tree healing boundary" type="Sprite2D" parent="."]
+position = Vector2(1.33514e-05, 5.72205e-06)
+scale = Vector2(3, 3)
+texture = ExtResource("1_u3lkt")
+
+[node name="Tree" type="Sprite2D" parent="."]
+position = Vector2(1.43051e-05, 8.58307e-06)
+scale = Vector2(4, 4)
+texture = ExtResource("1_wfhhg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0klcx")
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

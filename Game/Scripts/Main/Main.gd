@@ -4,7 +4,7 @@ var regenTimer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	regenTimer = 10 * sin(4.5 / (Upgrades.regen + 3))
-	$Health.max_value = Run.charHealth
+	$Health.max_value = Run.charMaxHealth
 	
 	# start timers on run start
 	$Regen.start(regenTimer)
@@ -12,7 +12,11 @@ func _ready():
 	# replace with variables
 	$Enemy.start(1)
 	$Candy.start(5)
-	$Snowball.start(1)
+	
+	if(Shop.snowball):
+		$Snowball.start(1)
+	if(Shop.healingTree):
+		$Tree.start(10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -54,8 +58,9 @@ func _on_enemy_timeout():
 
 
 func _on_regen_timeout():
-	print("Gained 1 hp")
-	Run.charHealth += 1
+	if(Run.charHealth < Run.charMaxHealth):
+		Run.charHealth += 1
+		print("Gained 1 hp")
 
 
 func _on_snowball_timeout():
@@ -65,6 +70,12 @@ func _on_snowball_timeout():
 			snowball.position = $Santa.position
 			add_child(snowball)
 			print("Spawned snowball")
-			await get_tree().create_timer(0.1).timeout
 	else:
 		pass
+
+
+func _on_tree_timeout():
+	var tree = load("res://Game/Scenes/Weapons/Healing Tree.tscn").instantiate()
+	tree.position = $Santa.position
+	add_child(tree)
+	print("Spawned tree")

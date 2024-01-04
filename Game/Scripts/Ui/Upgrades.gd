@@ -149,7 +149,7 @@ func _on_speed_pressed():
 func _on_greed_pressed():
 	if(currGold >= greedAmt):
 		if(Upgrades.limitBreak):
-			if(Upgrades.greed < 60):
+			if(Upgrades.greed < 55):
 				Gold.reduceGold(greedAmt)
 				Upgrades.changeGreed(Upgrades.greed + 1)
 				Upgrades.changeUpgrades(Upgrades.upgrades + 1)

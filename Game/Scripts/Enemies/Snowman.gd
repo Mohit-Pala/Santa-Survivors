@@ -13,4 +13,5 @@ func _on_body_entered(body):
 		self.queue_free()
 	elif(body.is_in_group("Weapon")):
 		Run.killed()
+		body.queue_free()
 		self.queue_free()

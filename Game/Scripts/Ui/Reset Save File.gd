@@ -27,7 +27,7 @@ func resetValues():
 	Upgrades.changeCurse(0)
 	Upgrades.changeAmount(0)
 	Upgrades.changeSpeed(0)
-	Upgrades.changeGreed(0)
+	Upgrades.changeGreed(20)
 	Upgrades.changeProjectileSpeed(0)
 	Upgrades.changeProjectileTimeout(0)
 	

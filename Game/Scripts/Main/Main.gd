@@ -22,7 +22,7 @@ func _process(_delta):
 
 
 func _on_flee_pressed():
-	Gold.changeGold(Gold.gold + Run.enemiesKilled * 100)
+	Gold.changeGold(Gold.gold + Run.enemiesKilled * 100 + (Run.enemiesKilled * 100 * 0.026 * 1.2**Upgrades.greed))
 	Run.reset()
 	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Main Menu.tscn")
 

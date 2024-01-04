@@ -33,7 +33,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_udeu1"]
 size = Vector2(22, 9)
 
-[node name="Candy" type="CharacterBody2D" groups=["Weapon"]]
+[node name="Candy" type="StaticBody2D" groups=["Weapon"]]
 script = ExtResource("1_fsb6g")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

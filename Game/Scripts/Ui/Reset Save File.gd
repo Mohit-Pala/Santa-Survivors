@@ -32,6 +32,11 @@ func resetValues():
 	Upgrades.changeProjectileTimeout(0)
 	
 	# weapons
+	Shop.changeSnowball(false)
+	Shop.changePresents(false)
+	Shop.changeStar(false)
+	Shop.changeHealingTree(false)
+	Shop.changeSnowShield(false)
 
 func saveGame():
 	var config = ConfigFile.new()

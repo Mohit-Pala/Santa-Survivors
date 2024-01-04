@@ -22,6 +22,8 @@ animations = [{
 size = Vector2(40, 64)
 
 [node name="Santa" type="CharacterBody2D" groups=["Player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_ayorq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

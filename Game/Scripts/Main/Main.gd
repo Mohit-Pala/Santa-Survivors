@@ -8,8 +8,11 @@ func _ready():
 	
 	# start timers on run start
 	$Regen.start(regenTimer)
+	
+	# replace with variables
 	$Enemy.start(1)
-	$Candy.start(1)
+	$Candy.start(5)
+	$Snowball.start(1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -23,10 +26,12 @@ func _on_flee_pressed():
 
 
 func _on_candy_timeout():
-	var candy = load("res://Game/Scenes/Weapons/candy.tscn").instantiate()
-	candy.position = $Santa.position
-	add_child(candy)
-	print("Spawned candy")
+	for i in (Upgrades.amount + 1):
+		var candy = load("res://Game/Scenes/Weapons/candy.tscn").instantiate()
+		candy.position = $Santa.position
+		add_child(candy)
+		print("Spawned candy")
+		await get_tree().create_timer(0.01).timeout
 
 
 func _on_enemy_timeout():
@@ -35,7 +40,6 @@ func _on_enemy_timeout():
 	for i in (Upgrades.curse + 1):
 		var enemySpawn = randi_range(0,1)
 		var enemy
-
 		if (enemySpawn == 0):
 			enemy = load("res://Game/Scenes/Enemies/Snowman.tscn").instantiate()
 		else:
@@ -50,3 +54,15 @@ func _on_enemy_timeout():
 func _on_regen_timeout():
 	print("Gained 1 hp")
 	Run.charHealth += 1
+
+
+func _on_snowball_timeout():
+	if(Shop.snowball):
+		for i in (Upgrades.amount + 1):
+			var snowball = load("res://Game/Scenes/Weapons/Snowball.tscn").instantiate()
+			snowball.position = $Santa.position
+			add_child(snowball)
+			print("Spawned snowball")
+			await get_tree().create_timer(0.1).timeout
+	else:
+		pass

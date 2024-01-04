@@ -13,4 +13,11 @@ Weapons:
 	Snowball
 	
 	
-
+Todo:
+	projectile speed
+	timeout
+	Presents
+	Star
+	Shield
+	Tree
+	Grinch boss

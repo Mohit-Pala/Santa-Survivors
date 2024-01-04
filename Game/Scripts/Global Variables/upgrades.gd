@@ -9,7 +9,7 @@ var regen = 0
 var curse = 0
 var amount = 0
 var speed = 0
-var greed = 20
+var greed = 28
 var projectileTimeout = 0
 var projectileSpeed = 0
 

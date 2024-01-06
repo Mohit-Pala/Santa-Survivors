@@ -24,6 +24,10 @@ func changeCharPos(x, y):
 	charPosx = x
 	charPosy = y
 
+func changeHealth(new):
+	charHealth = new
+
+
 func reset():
 	enemiesKilled = 0
 	charHealth = 10 + Upgrades.health

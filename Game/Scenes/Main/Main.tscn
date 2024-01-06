@@ -42,9 +42,19 @@ text = "Flee to main menu"
 [node name="Enemy" type="Timer" parent="."]
 
 [node name="Boss" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 30.0
 one_shot = true
 autostart = true
+
+[node name="notify-send" type="Label" parent="."]
+offset_top = 704.0
+offset_right = 1920.0
+offset_bottom = 1088.0
+theme_override_font_sizes/font_size = 46
+text = "This is a notification"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
 
 [connection signal="pressed" from="Flee" to="." method="_on_flee_pressed"]
 [connection signal="timeout" from="Candy" to="." method="_on_candy_timeout"]

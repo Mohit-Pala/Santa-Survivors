@@ -3,6 +3,7 @@ extends Node2D
 var regenTimer
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	notify_send("Practice: 10 seconds")
 	regenTimer = 10 * sin(4.5 / (Upgrades.regen + 3))
 	$Health.max_value = Run.charMaxHealth
 	
@@ -10,11 +11,11 @@ func _ready():
 	$Regen.start(regenTimer)
 	
 	# replace with variables
-	$Enemy.start(1)
-	$Candy.start(5)
+	$Enemy.start(1.5)
+	$Candy.start(2)
 	
 	if(Shop.snowball):
-		$Snowball.start(1)
+		$Snowball.start(3)
 	if(Shop.healingTree):
 		$Tree.start(10)
 
@@ -84,7 +85,7 @@ func _on_tree_timeout():
 func _on_boss_timeout():
 	# stop all enemy timers
 	$Enemy.stop()
-	
+	notify_send("Boss Fight\nKeep your distance")
 	# give 1 second before boss fight
 	await get_tree().create_timer(1).timeout
 	
@@ -92,3 +93,9 @@ func _on_boss_timeout():
 	var grinch = load("res://Game/Scenes/Enemies/Grinch.tscn").instantiate()
 	add_child(grinch)
 	print("Spawned boss")
+	
+func notify_send(message):
+	await get_tree().create_timer(0.1).timeout
+	$"notify-send".text = message
+	await get_tree().create_timer(3).timeout
+	$"notify-send".text = ""

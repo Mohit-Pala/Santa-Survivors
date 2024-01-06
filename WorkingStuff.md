@@ -19,5 +19,8 @@ Todo:
 	Presents
 	Star
 	Shield
+		Grinch boss
+		
+		
+	Not working:
 	Tree
-	Grinch boss

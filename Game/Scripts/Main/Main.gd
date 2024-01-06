@@ -37,7 +37,7 @@ func _on_candy_timeout():
 		candy.position = $Santa.position
 		add_child(candy)
 		print("Spawned candy")
-		await get_tree().create_timer(0.01).timeout
+		await get_tree().create_timer(0.05).timeout
 
 
 func _on_enemy_timeout():
@@ -79,3 +79,16 @@ func _on_tree_timeout():
 	tree.position = $Santa.position
 	add_child(tree)
 	print("Spawned tree")
+
+
+func _on_boss_timeout():
+	# stop all enemy timers
+	$Enemy.stop()
+	
+	# give 1 second before boss fight
+	await get_tree().create_timer(1).timeout
+	
+	# spawn boss
+	var grinch = load("res://Game/Scenes/Enemies/Grinch.tscn").instantiate()
+	add_child(grinch)
+	print("Spawned boss")

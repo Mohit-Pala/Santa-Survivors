@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://ucd2lshvwc7f"]
+
+[ext_resource type="Texture2D" uid="uid://dlmm2kkcy887e" path="res://Assets/Ememies/GrinchFrame1.png" id="1_cyjqg"]
+[ext_resource type="Script" path="res://Game/Scripts/Enemies/Grinch.gd" id="1_la7hk"]
+[ext_resource type="Texture2D" uid="uid://cv4lkha6jh5u8" path="res://Assets/Ememies/GrinchFrame2.png" id="2_ykdpb"]
+[ext_resource type="Texture2D" uid="uid://pdfdetxotj5x" path="res://Assets/Ememies/GrinchFrame3.png" id="3_wpqxq"]
+[ext_resource type="Texture2D" uid="uid://pjixc5dvbyib" path="res://Assets/Ememies/GrinchFrame4.png" id="4_6ksq1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bl3m3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_cyjqg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ykdpb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_wpqxq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_6ksq1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l2qhj"]
+size = Vector2(256, 384)
+
+[node name="Grinch Boss" type="Area2D"]
+collision_mask = 3
+script = ExtResource("1_la7hk")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(-5.72205e-06, 1.14441e-05)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_bl3m3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+shape = SubResource("RectangleShape2D_l2qhj")
+
+[node name="Snowman" type="Timer" parent="."]
+
+[node name="Cookie" type="Timer" parent="."]
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -128.0
+offset_top = 96.0
+offset_right = 128.0
+offset_bottom = 123.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Snowman" to="." method="_on_snowman_timeout"]
+[connection signal="timeout" from="Cookie" to="." method="_on_cookie_timeout"]

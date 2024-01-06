@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://b7oyi7v4qecul"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Main/Enemy Killer.gd" id="1_6s1fg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gs5ji"]
+size = Vector2(4864, 2528)
+
+[node name="EnemyKiller" type="Area2D"]
+script = ExtResource("1_6s1fg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1312, 336)
+shape = SubResource("RectangleShape2D_gs5ji")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

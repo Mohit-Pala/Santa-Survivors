@@ -32,7 +32,7 @@ text = "Flee to main menu"
 [node name="Presents" type="Timer" parent="."]
 
 [node name="Star" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 10.0
 
 [node name="Shield" type="Timer" parent="."]
 

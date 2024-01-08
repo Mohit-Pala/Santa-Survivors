@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://drqylikrejhxd"]
+[gd_scene load_steps=7 format=3 uid="uid://drqylikrejhxd"]
 
 [ext_resource type="Script" path="res://Game/Scripts/Player/Santa.gd" id="1_ayorq"]
 [ext_resource type="Texture2D" uid="uid://gxwduq85ji5d" path="res://Assets/SantaSpriteFrame1.png" id="1_pynwv"]
 [ext_resource type="Texture2D" uid="uid://cutl3712wyl3x" path="res://Assets/SantaSpriteFrame2.png" id="2_rkqkx"]
+[ext_resource type="Texture2D" uid="uid://2im4uh1sbnoo" path="res://Assets/Weapons/snowShield.png" id="4_yw4dg"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rwqj1"]
 animations = [{
@@ -36,3 +37,8 @@ frame_progress = 0.244976
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-4, 0)
 shape = SubResource("RectangleShape2D_olvqp")
+
+[node name="SnowShield" type="Sprite2D" parent="."]
+position = Vector2(-4, -1.90735e-06)
+scale = Vector2(2.75, 4)
+texture = ExtResource("4_yw4dg")

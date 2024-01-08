@@ -10,7 +10,11 @@ func _process(_delta):
 		pass
 	else:
 		Run.changeCharPos(tmp.x, tmp.y)
-
+	if(Run.snowShieldActive):
+		$SnowShield.visible = true
+	else:
+		$SnowShield.visible = false
+	
 func _ready():
 	speed = speed
 	screen_size = get_viewport_rect().size

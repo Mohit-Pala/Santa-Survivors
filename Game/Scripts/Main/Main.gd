@@ -39,6 +39,8 @@ func _ready():
 		$Snowball.start(snowballTimer)
 	if(Shop.healingTree):
 		$Tree.start(treeTimer)
+	if(Shop.star):
+		$Star.start()
 	
 	print(Upgrades.projectileTimeout)
 	print(candyTimer)

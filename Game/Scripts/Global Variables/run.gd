@@ -5,9 +5,12 @@ var charHealth = 0
 var charMaxHealth = 0
 var enemiesKilled = 0
 
+var snowShieldHealth = 5 + Upgrades.amount
+
 # weapons
 var blackHoleActive = false
 var starActive = false
+var snowShieldActive = false
 
 # char pos
 var charPosx = 0
@@ -44,3 +47,6 @@ func changeBlackHoleStatus(new):
 	
 func changeStarStatus(new):
 	starActive = new
+
+func resetSnowShield():
+	snowShieldHealth = 5 + Upgrades.amount

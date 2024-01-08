@@ -22,7 +22,7 @@ texture = ExtResource("2_ufd4t")
 shape = SubResource("CircleShape2D_yvy3w")
 
 [node name="BlackHoleTimer" type="Timer" parent="."]
-wait_time = 5.0
+wait_time = 7.0
 one_shot = true
 autostart = true
 

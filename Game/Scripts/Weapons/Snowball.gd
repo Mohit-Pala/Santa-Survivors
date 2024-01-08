@@ -16,8 +16,8 @@ func _ready():
 	getVector()
 
 func _physics_process(delta):
-	position.x = move_toward(position.x, direction.x, delta * (600 - Upgrades.projectileSpeed * 10))
-	position.y = move_toward(position.y, direction.y, delta * (600 - Upgrades.projectileSpeed * 10))
+	position.x = move_toward(position.x, direction.x, delta * (50 + (Upgrades.projectileSpeed * 10)))
+	position.y = move_toward(position.y, direction.y, delta * (50 + (Upgrades.projectileSpeed * 10)))
 	move_and_slide()
 	# free if off screen
 	if(position.x <= 0 or position.x >= get_window().size.x or position.y <= 0 or position.y >= get_window().size.y):

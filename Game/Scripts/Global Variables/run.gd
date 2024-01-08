@@ -5,6 +5,10 @@ var charHealth = 0
 var charMaxHealth = 0
 var enemiesKilled = 0
 
+# weapons
+var blackHoleActive = false
+var starActive = false
+
 # char pos
 var charPosx = 0
 var charPosy = 0
@@ -29,6 +33,14 @@ func changeHealth(new):
 
 
 func reset():
+	blackHoleActive = false
+	starActive = false
 	enemiesKilled = 0
 	charHealth = 10 + Upgrades.health
 	charMaxHealth = charHealth
+
+func changeBlackHoleStatus(new):
+	blackHoleActive = new
+	
+func changeStarStatus(new):
+	starActive = new

@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwgxvxpfhb6xv"]
+
+[ext_resource type="Texture2D" uid="uid://bx4r12qer68ps" path="res://Assets/Weapons/Star.png" id="1_ar5on"]
+[ext_resource type="Script" path="res://Game/Scripts/Weapons/Star.gd" id="1_poy7m"]
+[ext_resource type="Texture2D" uid="uid://lyuf5t4i1aio" path="res://Assets/Weapons/BlackHoleBackup.png" id="2_ufd4t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yvy3w"]
+
+[node name="Star" type="Area2D"]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_poy7m")
+
+[node name="starSprite" type="Sprite2D" parent="."]
+texture = ExtResource("1_ar5on")
+
+[node name="blackholeSprite" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_ufd4t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yvy3w")
+
+[node name="BlackHoleTimer" type="Timer" parent="."]
+wait_time = 5.0
+one_shot = true
+autostart = true

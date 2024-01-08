@@ -6,7 +6,7 @@ func _ready():
 	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
-	position.y = move_toward(self.position.y, get_window().size.y, delta * 100)
+	position.y = move_toward(self.position.y, get_window().size.y, delta * (50 + (Upgrades.projectileSpeed * 10)))
 
 
 func _on_delete_self_timeout():

@@ -63,7 +63,7 @@ func _on_health_pressed():
 			Upgrades.changeHealth(Upgrades.health + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.health >= 50):
+			if(Upgrades.health >= 500):
 				pass
 			else:
 				Gold.reduceGold(healthAmt)
@@ -99,7 +99,7 @@ func _on_curse_pressed():
 			Upgrades.changeCurse(Upgrades.curse + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.curse >= 50):
+			if(Upgrades.curse >= 10):
 				pass
 			else:
 				Gold.reduceGold(curseAmt)
@@ -117,7 +117,7 @@ func _on_amount_pressed():
 			Upgrades.changeAmount(Upgrades.amount + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.amount >= 50):
+			if(Upgrades.amount >= 20):
 				pass
 			else:
 				Gold.reduceGold(amountAmt)
@@ -149,7 +149,7 @@ func _on_speed_pressed():
 func _on_greed_pressed():
 	if(currGold >= greedAmt):
 		if(Upgrades.limitBreak):
-			if(Upgrades.greed < 55):
+			if(Upgrades.greed < 70):
 				Gold.reduceGold(greedAmt)
 				Upgrades.changeGreed(Upgrades.greed + 1)
 				Upgrades.changeUpgrades(Upgrades.upgrades + 1)
@@ -190,7 +190,7 @@ func _on_projectile_timeout_pressed():
 			Upgrades.changeProjectileTimeout(Upgrades.projectileTimeout + 1)
 			Upgrades.changeUpgrades(Upgrades.upgrades + 1)
 		else:
-			if(Upgrades.projectileTimeout >= 50):
+			if(Upgrades.projectileTimeout >= 30):
 				pass
 			else:
 				Gold.reduceGold(projTimeAmt)

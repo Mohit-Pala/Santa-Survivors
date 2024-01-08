@@ -6,7 +6,10 @@ var screen_size
 
 func _process(_delta):
 	var tmp = self.position
-	Run.changeCharPos(tmp.x, tmp.y)
+	if(Run.blackHoleActive):
+		pass
+	else:
+		Run.changeCharPos(tmp.x, tmp.y)
 
 func _ready():
 	speed = speed

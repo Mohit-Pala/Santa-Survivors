@@ -1,24 +1,47 @@
 extends Node2D
 
 var regenTimer
+var candyTimer
+var snowballTimer
+var treeTimer
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	notify_send("Practice: 10 seconds")
-	regenTimer = 10 * sin(4.5 / (Upgrades.regen + 3))
+	notify_send("Practice: 30 seconds")
+	
+	# tree not done
+	treeTimer = 1500
+	
+	regenTimer = 25 - (Upgrades.regen * 0.1)
+	if (regenTimer <= 0):
+		regenTimer = 0.01
 	$Health.max_value = Run.charMaxHealth
+	
+	
+	# set timer values
+	candyTimer = 5 - (Upgrades.projectileTimeout * 0.1)
+	if (candyTimer <= 0):
+		candyTimer = 0.01
+	snowballTimer = 3 - (Upgrades.projectileTimeout * 0.1)
+	if (snowballTimer <= 0):
+		snowballTimer = 0.01
 	
 	# start timers on run start
 	$Regen.start(regenTimer)
 	
-	# replace with variables
+	# Enemy timer
 	$Enemy.start(1.5)
-	$Candy.start(2)
+	
+	# weapon timers
+	$Candy.start(candyTimer)
 	
 	if(Shop.snowball):
-		$Snowball.start(3)
+		$Snowball.start(snowballTimer)
 	if(Shop.healingTree):
-		$Tree.start(10)
-
+		$Tree.start(treeTimer)
+	
+	print(Upgrades.projectileTimeout)
+	print(candyTimer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -99,3 +122,10 @@ func notify_send(message):
 	$"notify-send".text = message
 	await get_tree().create_timer(3).timeout
 	$"notify-send".text = ""
+
+
+func _on_star_timeout():
+	var star = load("res://Game/Scenes/Weapons/Star.tscn").instantiate()
+	star.position = $Santa.position
+	add_child(star)
+	print("Spawned star")

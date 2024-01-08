@@ -33,7 +33,6 @@ text = "Flee to main menu"
 
 [node name="Star" type="Timer" parent="."]
 wait_time = 5.0
-autostart = true
 
 [node name="Shield" type="Timer" parent="."]
 

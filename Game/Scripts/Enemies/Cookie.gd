@@ -6,7 +6,10 @@ func _physics_process(delta):
 
 func _on_body_entered(body):
 	if(body.is_in_group("Player")):
-		Run.hit()
+		if(Run.snowShieldActive):
+			Run.snowShieldHealth -= 1
+		else:
+			Run.hit()
 		self.queue_free()
 	elif(body.is_in_group("Weapon")):
 		Run.killed()

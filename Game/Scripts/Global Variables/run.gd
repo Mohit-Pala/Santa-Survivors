@@ -49,4 +49,5 @@ func changeStarStatus(new):
 	starActive = new
 
 func resetSnowShield():
+	snowShieldActive = false
 	snowShieldHealth = 5 + Upgrades.amount

@@ -4,6 +4,7 @@ var regenTimer
 var candyTimer
 var snowballTimer
 var treeTimer
+var shieldTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -11,8 +12,9 @@ func _ready():
 	
 	# tree not done
 	treeTimer = 1500
+	shieldTimer = 10
 	
-	regenTimer = 25 - (Upgrades.regen * 0.1)
+	regenTimer = 10 - (Upgrades.regen * 0.1)
 	if (regenTimer <= 0):
 		regenTimer = 0.01
 	$Health.max_value = Run.charMaxHealth
@@ -41,6 +43,8 @@ func _ready():
 		$Tree.start(treeTimer)
 	if(Shop.star):
 		$Star.start()
+	if(Shop.snowShield):
+		$Shield.start(shieldTimer)
 	
 	print(Upgrades.projectileTimeout)
 	print(candyTimer)
@@ -110,7 +114,11 @@ func _on_tree_timeout():
 func _on_boss_timeout():
 	# stop all enemy timers
 	$Enemy.stop()
-	notify_send("Boss Fight\nKeep your distance")
+	var notif = "Boss Fight\nKeep your distance"
+	if(Shop.snowShield):
+		notif += "\nGrinch ignores armor"
+		
+	notify_send(notif)
 	# give 1 second before boss fight
 	await get_tree().create_timer(1).timeout
 	
@@ -131,3 +139,9 @@ func _on_star_timeout():
 	star.position = $Santa.position
 	add_child(star)
 	print("Spawned star")
+
+
+func _on_shield_timeout():
+	print("activating shield")
+	Run.resetSnowShield()
+	Run.snowShieldActive = true

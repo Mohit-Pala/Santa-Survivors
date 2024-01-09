@@ -61,6 +61,7 @@ autowrap_mode = 3
 [connection signal="timeout" from="Candy" to="." method="_on_candy_timeout"]
 [connection signal="timeout" from="Snowball" to="." method="_on_snowball_timeout"]
 [connection signal="timeout" from="Star" to="." method="_on_star_timeout"]
+[connection signal="timeout" from="Shield" to="." method="_on_shield_timeout"]
 [connection signal="timeout" from="Tree" to="." method="_on_tree_timeout"]
 [connection signal="timeout" from="Regen" to="." method="_on_regen_timeout"]
 [connection signal="timeout" from="Enemy" to="." method="_on_enemy_timeout"]

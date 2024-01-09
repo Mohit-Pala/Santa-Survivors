@@ -6,5 +6,11 @@ Tools used:
     Kolour Paint: to create the assets https://apps.kde.org/kolourpaint/
     
 Build:
-    Get godot game engine
+
+    Download godot game engine
+    
     git clone this repo
+
+    import the project into godot
+
+    Project -> export

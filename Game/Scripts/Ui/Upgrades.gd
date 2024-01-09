@@ -25,7 +25,7 @@ func updateAmts():
 	
 	# upgrades 
 	healthAmt = 100 + Upgrades.health * 10 + Upgrades.upgrades * 30
-	regenAmt = 300 + Upgrades.regen * 10 + Upgrades.upgrades * 30
+	regenAmt = 10 + Upgrades.regen * 10 + Upgrades.upgrades * 10
 	curseAmt = 500 + Upgrades.curse * 10 + Upgrades.upgrades * 10
 	amountAmt = 0 + Upgrades.amount * 50 + Upgrades.upgrades * 50
 	speedAmt = 100 + Upgrades.speed * 10 + Upgrades.upgrades * 30

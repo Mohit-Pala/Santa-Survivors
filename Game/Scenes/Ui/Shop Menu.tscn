@@ -30,6 +30,7 @@ text = "Snowball
 $10,000"
 
 [node name="Presents" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1280.0
 offset_top = 256.0
@@ -57,6 +58,7 @@ text = "Snow shield
 $100,000"
 
 [node name="Healing tree" type="Button" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 1280.0
 offset_top = 512.0

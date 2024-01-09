@@ -11,7 +11,7 @@ var amount = 0
 var speed = 0
 var greed = 28
 var projectileTimeout = 0
-var projectileSpeed = 0
+var projectileSpeed = 30
 
 # change meta
 func changeUpgrades(num):

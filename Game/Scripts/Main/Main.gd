@@ -145,3 +145,8 @@ func _on_shield_timeout():
 	print("activating shield")
 	Run.resetSnowShield()
 	Run.snowShieldActive = true
+
+
+func _on_lore_timeout():
+	var lore = "Grinch has the scepter of mind control\ndefeat grinch to free the snowmen"
+	notify_send(lore)

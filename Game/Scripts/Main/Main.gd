@@ -46,8 +46,8 @@ func _ready():
 	if(Shop.snowShield):
 		$Shield.start(shieldTimer)
 	
-	print(Upgrades.projectileTimeout)
-	print(candyTimer)
+	# print(Upgrades.projectileTimeout)
+	# print(candyTimer)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
@@ -58,7 +58,7 @@ func _process(_delta):
 func _on_flee_pressed():
 	Gold.changeGold(Gold.gold + Run.enemiesKilled * 500 + (Run.enemiesKilled * 500 * 0.026 * 1.2**Upgrades.greed))
 	Run.reset()
-	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Main Menu.tscn")
+	get_tree().change_scene_to_file("res://Game/Scenes/Ui/Lose.tscn")
 
 
 func _on_candy_timeout():
@@ -66,7 +66,7 @@ func _on_candy_timeout():
 		var candy = load("res://Game/Scenes/Weapons/candy.tscn").instantiate()
 		candy.position = $Santa.position
 		add_child(candy)
-		print("Spawned candy")
+		# print("Spawned candy")
 		await get_tree().create_timer(0.05).timeout
 
 
@@ -84,13 +84,13 @@ func _on_enemy_timeout():
 		enemy.position.x = randi_range(0 , screenSize.x)
 		enemy.position.y = randi_range(0 ,screenSize.y)
 		add_child(enemy)
-		print("Spawned Enemy")
+		# print("Spawned Enemy")
 
 
 func _on_regen_timeout():
 	if(Run.charHealth < Run.charMaxHealth):
 		Run.charHealth += 1
-		print("Gained 1 hp")
+		# print("Gained 1 hp")
 
 
 func _on_snowball_timeout():
@@ -99,7 +99,7 @@ func _on_snowball_timeout():
 			var snowball = load("res://Game/Scenes/Weapons/Snowball.tscn").instantiate()
 			snowball.position = $Santa.position
 			add_child(snowball)
-			print("Spawned snowball")
+			# print("Spawned snowball")
 	else:
 		pass
 
@@ -108,7 +108,7 @@ func _on_tree_timeout():
 	var tree = load("res://Game/Scenes/Weapons/Healing Tree.tscn").instantiate()
 	tree.position = $Santa.position
 	add_child(tree)
-	print("Spawned tree")
+	# print("Spawned tree")
 
 
 func _on_boss_timeout():
@@ -125,7 +125,7 @@ func _on_boss_timeout():
 	# spawn boss
 	var grinch = load("res://Game/Scenes/Enemies/Grinch.tscn").instantiate()
 	add_child(grinch)
-	print("Spawned boss")
+	# print("Spawned boss")
 	
 func notify_send(message):
 	await get_tree().create_timer(0.1).timeout
@@ -138,11 +138,11 @@ func _on_star_timeout():
 	var star = load("res://Game/Scenes/Weapons/Star.tscn").instantiate()
 	star.position = $Santa.position
 	add_child(star)
-	print("Spawned star")
+	# print("Spawned star")
 
 
 func _on_shield_timeout():
-	print("activating shield")
+	# print("activating shield")
 	Run.resetSnowShield()
 	Run.snowShieldActive = true
 

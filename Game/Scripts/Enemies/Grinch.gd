@@ -17,7 +17,7 @@ func _process(_delta):
 	if health <= 0:
 		Gold.changeGold(Gold.gold + 10000 + Run.enemiesKilled * 500 +(Run.enemiesKilled * 500 * 0.026 * 1.2**Upgrades.greed))
 		Run.reset()
-		get_tree().change_scene_to_file("res://Game/Scenes/Ui/Main Menu.tscn")
+		get_tree().change_scene_to_file("res://Game/Scenes/Ui/win.tscn")
 
 func _physics_process(delta):
 	position.x = move_toward(self.position.x, Run.charPosx, delta * (60))

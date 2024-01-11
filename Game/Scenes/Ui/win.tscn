@@ -1,0 +1,43 @@
+[gd_scene load_steps=2 format=3 uid="uid://c7fqm5eongjkd"]
+
+[ext_resource type="Script" path="res://Game/Scripts/Ui/win.gd" id="1_0e8yj"]
+
+[node name="Lose" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0e8yj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 512.0
+theme_override_font_sizes/font_size = 300
+text = "You Win"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+layout_mode = 0
+offset_top = 512.0
+offset_right = 1920.0
+offset_bottom = 896.0
+theme_override_font_sizes/font_size = 60
+text = "Get limit break from upgrades menu to further upgrade santa
+
+Increase your curse and see how long you last"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_top = 896.0
+offset_right = 1920.0
+offset_bottom = 1088.0
+theme_override_font_sizes/font_size = 60
+text = "Back to main menu"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

@@ -41,6 +41,7 @@ func reset():
 	enemiesKilled = 0
 	charHealth = 10 + Upgrades.health
 	charMaxHealth = charHealth
+	snowShieldActive = false
 
 func changeBlackHoleStatus(new):
 	blackHoleActive = new

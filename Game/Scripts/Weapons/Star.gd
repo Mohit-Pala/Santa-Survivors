@@ -20,7 +20,7 @@ func _physics_process(delta):
 		Run.blackHoleActive = true
 
 	if Run.blackHoleActive == true:
-		print("Sucking in enemies")
+		# print("Sucking in enemies")
 		Run.changeCharPos(self.position.x, self.position.y)
 
 func _on_black_hole_timer_timeout():
